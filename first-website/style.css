@@ -1,0 +1,37 @@
+body{
+    background:rgb(247, 223, 245);
+    color:rgb(47, 73, 60);
+}
+
+p {
+    background:rgba(223, 156, 187, 0.776);
+    color:rgb(37, 27, 82);
+    border:2px dashed rgb(175, 5, 175);
+    padding:10px;
+    margin:10px;
+}
+p:hover {
+    background:rgb(243, 204, 210);
+}
+.banner {
+    text-align:center;
+    font-size:larger;
+    border-style:double;
+    border-width:5px;
+
+
+}
+
+
+a{
+    color:teal;
+    font-style:oblique;
+    font-weight:bolder;
+}
+
+a:hover {
+color:aquamarine
+
+}
+
+
