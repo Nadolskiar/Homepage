@@ -2,8 +2,6 @@
 #Homepage 
 =======
 # Homepage
-
-# Homepage
 <!doctype html>
 
 <html>
@@ -14,8 +12,8 @@
         <body>
 <h1> Abis Realm !</h1>
         <ul>
-            <li><a href="first-website/index.html">First Website</a></li>
-            <li><a href="passion/index.html">Passion</a></li>
+            <li><a href="../first-website/index.html">First Website</a></li>
+            <li><a href="../passion/index.html">Passion</a></li>
         </ul>
         <h3> Reading discussion one: </h3>
         <h4> 08/31/25 </h4>
