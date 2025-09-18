@@ -73,3 +73,11 @@ body {
 .nav h2 a:hover {
       color: #788852;
     }
+
+
+.footer {
+  text-align: center;             
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+  padding: 30px;                   
+  color: #333;   
+}               
