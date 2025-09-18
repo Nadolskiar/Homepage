@@ -1,0 +1,43 @@
+img {
+max-width:100%;
+box-sizing:border-box;
+
+}
+
+header {
+
+    background:rgb(115, 115, 172);
+    padding:10px; 
+    margin:10px; 
+}
+
+main {
+    background:purple;
+    padding:10px;
+    margin:10px;
+
+}
+
+.class {
+    background:lightgreen;
+
+}
+
+#id {
+
+    background:lightpink;
+
+
+}
+
+footer {
+    background:lightskyblue;
+    padding:10px;
+    margin:10px;
+}
+
+footer {
+    background:lightgrey;
+
+
+}
