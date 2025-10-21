@@ -1,64 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Abi's Realm</title>
-  <link rel="stylesheet" href="style.css">
+
+  <title>Washing dishes, yahh!!!!</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <h1>Abi's Realm!</h1>
-  <ul>
-         <li>
-                <a href="first-website/pages/index.html">First Website</a>
-        </li>
-        <li>
-                <a href="passion/index.html">Passion</a>
-        </li>
-            <li>
-                <a href="passion2/index.html">Passion2</a>
-        </li>
-    <li>
-<a href="positioning/index.html">Positioning</a>
-      
-    </li>
-        <li>
-<a href="flex-practice/index.html">Flex Practice</a>
-        
-      
-    </li>
-        <li>
-<a href="structurepro/index.html">Structure Project</a>
-        
-      
-    </li>
-     <li>
-<a href="specificity/index.html">Specificity</a>
-        
-      
-    </li>
-     <li>
-<a href="screensaver/index.html">Screensaver</a>
-        
-      
-    </li>
-  </ul>
 
- <!-- <h3>Reading Discussion One:</h3>
-  <h4>08/31/25</h4>
-  <p>
-    I really enjoyed all the various metaphors the readings used 
-    to describe websites. They made websites out to be not just a 
-    technical object or portfolio, but as a living, expressive space.
-    I was especially drawn to the garden or puddle metaphor, which 
-    suggests that websites can grow, change, or even disappear over 
-    time. Additionally, a website doesn’t need to be perfect or 
-    permanent; it just needs to reflect myself a nd the content in a 
-    meaningful way. In a digital world dominated by capitalism and corporations, 
-    being able to express oneself through the web feels almost nostalgic, 
-    especially when considering how much the web has changed 
-    since I was little.
 
-  -->
-  </p>
+  <div id="dirtyzone" class="zone"></div>
+
+
+  <div id="sink" class="zone">
+    <img src="images/sink.png" alt="sink">
+  </div>
+
+ 
+  <div id="stack" class="zone"></div>
+
+  <script>
+    const dirtyzone = document.getElementById('dirtyzone');
+    const sink = document.getElementById('sink');
+    const stack = document.getElementById('stack');
+
+   
+    function spawndirtydish() {
+      const dish = document.createElement('img');
+      dish.src = 'images/dirtydish.png';
+      dish.classList.add('dish');
+      dish.id = 'dirtydish';
+      dish.draggable = true;
+
+      dish.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', 'dish');
+      });
+
+      dirtyzone.innerHTML = '';
+      dirtyzone.appendChild(dish);
+      return dish;
+    }
+
+    let currentdish = spawndirtydish();
+    let stackCount = 0; 
+
+  
+    sink.addEventListener('dragover', (e) => e.preventDefault());
+    sink.addEventListener('dragenter', () => sink.classList.add('on'));
+    sink.addEventListener('dragleave', () => sink.classList.remove('on'));
+
+    sink.addEventListener('drop', (e) => {
+      e.preventDefault();
+      if (!currentdish) return;
+
+      sink.classList.add('on');
+      currentdish.style.visibility = 'hidden';
+
+      setTimeout(() => {
+        sink.classList.remove('on');
+
+       
+        const cleandish = document.createElement('img');
+        cleandish.src = 'images/cleandish.png';
+        cleandish.classList.add('stacked');
+
+       
+        cleandish.style.bottom = `${stackCount * 15 + 50}px`; 
+        stack.appendChild(cleandish);
+
+        stackCount++; 
+
+        
+        currentdish = spawndirtydish();
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
-
