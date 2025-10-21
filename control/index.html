@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Washing dishes, yahh!!!!</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+
+  <div id="dirtyzone" class="zone"></div>
+
+
+  <div id="sink" class="zone">
+    <img src="images/sink.png" alt="sink">
+  </div>
+
+ 
+  <div id="stack" class="zone"></div>
+
+  <script>
+    const dirtyzone = document.getElementById('dirtyzone');
+    const sink = document.getElementById('sink');
+    const stack = document.getElementById('stack');
+
+   
+    function spawndirtydish() {
+      const dish = document.createElement('img');
+      dish.src = 'images/dirtydish.png';
+      dish.classList.add('dish');
+      dish.id = 'dirtydish';
+      dish.draggable = true;
+
+      dish.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', 'dish');
+      });
+
+      dirtyzone.innerHTML = '';
+      dirtyzone.appendChild(dish);
+      return dish;
+    }
+
+    let currentdish = spawndirtydish();
+    let stackCount = 0; 
+
+  
+    sink.addEventListener('dragover', (e) => e.preventDefault());
+    sink.addEventListener('dragenter', () => sink.classList.add('on'));
+    sink.addEventListener('dragleave', () => sink.classList.remove('on'));
+
+    sink.addEventListener('drop', (e) => {
+      e.preventDefault();
+      if (!currentdish) return;
+
+      sink.classList.add('on');
+      currentdish.style.visibility = 'hidden';
+
+      setTimeout(() => {
+        sink.classList.remove('on');
+
+       
+        const cleandish = document.createElement('img');
+        cleandish.src = 'images/cleandish.png';
+        cleandish.classList.add('stacked');
+
+       
+        cleandish.style.bottom = `${stackCount * 15 + 50}px`; 
+        stack.appendChild(cleandish);
+
+        stackCount++; 
+
+        
+        currentdish = spawndirtydish();
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
