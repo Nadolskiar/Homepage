@@ -3,68 +3,62 @@ img {
   box-sizing: border-box;
 }
 
-
 body {
   margin: 0;
-  display: flex;
-  justify-content: center;  
-  align-items: center;      
-  gap: 80px;
   height: 100vh;
-  background-image: url('images/wallpaper.png');
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: top left;
-  font-family: sans-serif;
-}
+  width: 100vw;
 
-
-
-.zone {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 250px;
-  position: relative;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+
+  overflow: hidden;         /* prevent scrollbars */
+  background-color: black;  /* fallback */
 }
 
-
-#sink img {
-  width: 250px;
-  height: auto;
-  border: 2px dotted rgb(22, 8, 22);
-  transition: filter 0.3s ease;
-}
-
-#sink.on img {
-  filter: brightness(1.4) saturate(1.5);
-}
-
-
-.dish {
-  width: 120px;
-  height: auto;
-  cursor: grab;
-  transition: transform 0.3s;
-}
-
-.dish:active {
-  transform: scale(1.05);
-}
-
-
-#stack {
-  position: relative; 
-  width: 200px;
-  height: 250px;
- 
-}
-
-.stacked {
-  position: absolute;
-  width: 100px;
-  height: auto;
+#astrogradient {
+  position: fixed;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;         /* behind everything */
+  object-fit: cover;   /* crops nicely */
+  
+}
+
+/* TV image */
+.astrotv {
+  width: 450px;
+  height: auto;
+  z-index: 10;
+  position: relative;
+  filter: drop-shadow(0 0 60px rgba(0,0,0,0.7));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect: pink glow */
+.astrotv:hover {
+  filter: drop-shadow(0 0 60px rgba(0,0,0,0.7)) 
+          drop-shadow(0 0 30px rgba(255, 105, 180, 0.8));
+  transform: scale(1.05); /* optional: slight grow */
+}
+
+.back-button {
+    padding: 12px 25px;
+    background-color: #d640b300;
+    color: rgb(62, 126, 124);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'Mea Culpa', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    
+    transform: scale(1.05);
 }
