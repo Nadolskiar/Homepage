@@ -1,0 +1,161 @@
+body {
+    display: flex;
+    flex-direction: column; /* stack children vertically */
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background video */
+#astrogradient2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;               /* <- behind everything */
+}
+
+/* Main container */
+.main-container {
+    width: 90%;
+    max-width: 900px;
+    height: 600px;
+    display: flex;
+    gap: 20px;
+    background: rgba(245, 245, 245, 0);  /* optional semi-transparent */
+    border-radius: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;                /* ensure above video */
+    position: relative;
+}
+
+/* Columns */
+.left-column { flex: .5; display: flex; flex-direction: column; gap: 20px; }
+
+.right-column {
+    flex: 2.5;                        /* 2/3 of container */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;                     /* ensure it fills available width */
+}
+
+.right-box {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    border-radius: 10px;
+
+    /* FIX: remove centering */
+    display: block;            /* normal block layout instead of flex */
+
+    /* text formatting */
+    padding: 20px;
+    text-align: left;
+    font-family: "Special Gothic Expanded One", sans-serif;
+     color:#da6eb4; 
+    font-size: 14px;
+ filter: drop-shadow(0 0 60px rgba(0,0,0,0.7));
+ -webkit-text-stroke: 0.5px black;
+      }
+
+      
+
+/* Boxes */
+.left-box {
+    position:relative;
+    flex: 1;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    position: relative; /* allows overlay text */
+    overflow: hidden;   /* ensures images don’t spill outside */
+}
+
+.left-box .overlay-text {
+    position: absolute;           /* position relative to the box */
+    top: 50%;                     /* vertical center */
+    left: 50%;                    /* horizontal center */
+    transform: translate(-50%, -50%); /* center precisely */
+    text-align: center;           /* center text inside the box */
+    color:#da6eb4;
+    font-size: 18px;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    text-shadow: 0 0 5px rgba(0,0,0,0.7); /* makes text readable */
+    pointer-events: none;         /* optional, so clicks go to box */
+     filter: drop-shadow(0 0 60px rgba(0,0,0,0.7));
+     -webkit-text-stroke: 1.5px black;
+}
+
+/* Left box images */
+.left-box img {
+    max-width: 100%;    /* don’t exceed box width */
+    max-height: 100%;   /* don’t exceed box height */
+    object-fit: contain; /* keeps aspect ratio */
+    display: block;
+     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.97));
+}
+
+.box1 { 
+    background-color: #ffffff00; 
+    box-shadow: 0 4px 15px rgba(185, 244, 213, 0.81);
+}
+
+.box2 { 
+    background-color: #ffb84d00; 
+    box-shadow: 0 4px 15px rgba(185, 244, 213, 0.81);
+}
+
+.box3 { 
+    background-color: #ffd34d00; 
+    box-shadow: 0 4px 15px rgba(185, 244, 213, 0.81);
+}
+
+.box4 { 
+    background-color: #a1eaa100; 
+    box-shadow: 0 4px 15px rgba(185, 244, 213, 0.81);
+}
+
+.box5 { 
+    background-color: #7fb2ff00; 
+    box-shadow: 0 4px 15px rgba(185, 244, 213, 0.81);
+}
+
+.box6 { 
+    background-color: #b57cff00; 
+    box-shadow: 0 4px 15px rgba(185, 244, 213, 0.81);
+}
+
+.back-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;  /* centers button horizontally */
+    margin-top: 20px;         /* space above button */
+}
+
+.back-button {
+    padding: 12px 25px;
+    background-color: #d640b300;
+    color: rgb(62, 126, 124);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'Mea Culpa', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    
+    transform: scale(1.05);
+}

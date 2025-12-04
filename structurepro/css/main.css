@@ -1,0 +1,19 @@
+img {
+max-width:100%;
+box-sizing:border-box;
+
+}
+
+body {
+    background: url("../images/css-pattern-by-magicpatterncopy.png");
+    background-size: cover;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
