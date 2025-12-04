@@ -1,0 +1,64 @@
+img {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+
+  overflow: hidden;         /* prevent scrollbars */
+  background-color: black;  /* fallback */
+}
+
+#astrogradient {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;         /* behind everything */
+  object-fit: cover;   /* crops nicely */
+  
+}
+
+/* TV image */
+.astrotv {
+  width: 450px;
+  height: auto;
+  z-index: 10;
+  position: relative;
+  filter: drop-shadow(0 0 60px rgba(0,0,0,0.7));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect: pink glow */
+.astrotv:hover {
+  filter: drop-shadow(0 0 60px rgba(0,0,0,0.7)) 
+          drop-shadow(0 0 30px rgba(255, 105, 180, 0.8));
+  transform: scale(1.05); /* optional: slight grow */
+}
+
+.back-button {
+    padding: 12px 25px;
+    background-color: #d640b300;
+    color: rgb(62, 126, 124);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'Mea Culpa', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    
+    transform: scale(1.05);
+}
