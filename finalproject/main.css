@@ -16,7 +16,7 @@ body {
   background-color: black;  
 }
 
-#astrogradient {
+/* #astrogradient {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -28,7 +28,7 @@ body {
   z-index: -1;        
   object-fit: cover;   
   
-}
+} */
 
 .astrotv {
   width: 450px;
